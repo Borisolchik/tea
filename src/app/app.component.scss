@@ -1,0 +1,35 @@
+.btn-outline-success {
+  color: #007BFF;
+  border-color: #007BFF;
+}
+
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #007BFF;
+}
+
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+  background-image: url("../assets/images/next32.png");
+  background-position: 0;
+}
+
+.ui-state-hover .ui-icon {
+  background-image: url("../assets/images/next3.png");
+  background-position: 0;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+  background-image: url("../assets/images/next3.png");
+  background-position: 0;
+}
+
+.ui-icon {
+  position: absolute;
+  right: 28px;
+  top: 29px;
+  width: 20px;
+}
+
+.pr-5 {
+  padding-right: 3.5em !important;
+}

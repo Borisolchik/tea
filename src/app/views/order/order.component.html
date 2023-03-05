@@ -1,0 +1,113 @@
+<div class="container">
+  <div id="form" *ngIf="formShow" class="mb-5">
+    <h2 class="text-center m-5">Сделать заказ</h2>
+
+    <div class="col-lg-8 col-xl-6 mx-auto ms-auto">
+      <form class="row g-3 needs-validation" novalidate [formGroup]="checkoutForm">
+        <div class="col-md-12">
+          <label for="validationCustom07" class="form-label">Товар</label>
+          <input type="text" class="form-control"
+                 formControlName="product" required [readonly]="true"
+                 id="validationCustom07">
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Имя</label>
+          <input type="text" class="form-control"
+                 formControlName="name"
+                 id="validationCustom01" required>
+          <div *ngIf="checkoutForm.get('name')?.invalid && (checkoutForm.get('name')?.touched || checkoutForm.get('name')?.dirty)">
+            <div class="invalid-feedback" *ngIf="checkoutForm.get('name')?.errors?.['required']">
+              Your name is required.
+            </div>
+            <div class="invalid-feedback" *ngIf="checkoutForm.get('name')?.errors?.['name']">
+              Your name  is incorrect
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Фамилия</label>
+          <input type="text" class="form-control"
+                 formControlName="last_name"
+                 id="validationCustom02" >
+          <div *ngIf="checkoutForm.get('last_name')?.invalid && (checkoutForm.get('last_name')?.touched || checkoutForm.get('last_name')?.dirty)">
+            <div class="invalid-feedback" *ngIf="checkoutForm.get('last_name')?.errors?.['required']">
+              Your last name is required.
+            </div>
+            <div class="invalid-feedback" *ngIf="checkoutForm.get('last_name')?.errors?.['name']">
+              Your last name  is incorrect
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Телефон</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control"
+                   formControlName="phone"
+                   id="validationCustomUsername"
+                   aria-describedby="inputGroupPrepend" >
+            <div *ngIf="checkoutForm.get('phone')?.invalid && (checkoutForm.get('phone')?.touched || checkoutForm.get('phone')?.dirty)">
+              <div class="invalid-feedback" *ngIf="checkoutForm.get('phone')?.errors?.['required']">
+                Your phone is required.
+              </div>
+              <div class="invalid-feedback" *ngIf="checkoutForm.get('phone')?.errors?.['phone']">
+                Your phone is incorrect
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom04" class="form-label">Страна</label>
+          <input type="text" class="form-control"
+                 formControlName="country"
+                 id="validationCustom04" >
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('country')?.invalid
+              && (checkoutForm.get('country')?.touched || checkoutForm.get('country')?.dirty)
+              && checkoutForm.get('country')?.errors?.['required']">
+            Country is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom05" class="form-label">Индекс</label>
+          <input type="text" class="form-control"
+                 formControlName="zip"
+                 id="validationCustom05">
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('zip')?.invalid
+              && (checkoutForm.get('zip')?.touched || checkoutForm.get('zip')?.dirty)
+              && checkoutForm.get('zip')?.errors?.['required']">
+            Zip is required
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label for="validationCustom03" class="form-label">Адрес</label>
+          <input type="text" class="form-control"
+                 formControlName="address"
+                 id="validationCustom03" >
+          <div *ngIf="checkoutForm.get('address')?.invalid && (checkoutForm.get('address')?.touched || checkoutForm.get('address')?.dirty)">
+            <div class="invalid-feedback" *ngIf="checkoutForm.get('address')?.errors?.['required']">
+              Your address is required.
+            </div>
+            <div class="invalid-feedback" *ngIf="checkoutForm.get('address')?.errors?.['address']">
+              Your address is incorrect
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label for="validationCustom06" class="form-label">Комментарий к заказу</label>
+          <input type="text" class="form-control"
+                 formControlName="comment"
+                 id="validationCustom06" >
+        </div>
+
+        <div class="col-12">
+          <a class="open-popup-link">
+            <button class="btn btn-primary" type="submit"  id="submit" (click)="createOrder()">Отправить</button>
+          </a>
+        </div>
+        <div class="text-danger" *ngIf="showError">Произошла ошибка. Попробуйте еще раз.</div>
+      </form>
+    </div>
+  </div>
+  <div style="height: 100vh" *ngIf="!formShow">
+    <h2 class="text-center m-5">Спасибо за заказ!</h2>
+  </div>
+</div>

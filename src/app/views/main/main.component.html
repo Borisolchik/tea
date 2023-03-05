@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="single-item mt-5">
+    <div class="image1 pb-5">
+      <div class="p-5 mb-5 mt-5">
+        <div class="fs-1 fw-bold m-5 pt-5">Скидки на травянные чаи</div>
+        <div class="fs-5 pb-5 ps-5">Узнай все подробности, заполнив заявку</div>
+      </div>
+    </div>
+  </div>
+  <h2 class="text-center m-5">Ответы на часто задаваемые вопросы</h2>
+
+  <div class="col-lg-8 ms-auto mx-auto">
+    <ngb-accordion #acc="ngbAccordion"
+                   activeIds="ngb-panel-0" >
+      <ngb-panel title="Собираете ли вы подарочные боксы?">
+        <ng-template ngbPanelContent  class="border-0 pb-0">
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span>Сколько у вас разновидностей чая?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="В какой срок осуществляется доставка?">
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="У вас обновляется ассортимент?">
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Какого объема у вас пачки чая?">
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+
+</div>
+<div id="test-popup" class="white-popup" *ngIf="showPopup">
+  <div class="popup__container">
+    Посмотрите наши чайные коллекции!
+    <div>
+      <a routerLink="/products" class="btn btn-primary mt-3">Смотреть</a>
+    </div>
+  </div>
+</div>
